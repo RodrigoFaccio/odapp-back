@@ -5,7 +5,7 @@ Nodejs 18+
 banco postgresql
 
 ## comandos
-
-**yarn**
- **npx prisma migrate dev**
- **yarn dev**
+```bash
+yarn
+npx prisma migrate dev
+yarn dev
