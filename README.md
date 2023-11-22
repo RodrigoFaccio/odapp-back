@@ -1,6 +1,6 @@
 # Projeto back end ODAPP
 
-para rodar o projeto e nescessario ter intalado na sua maquina 
+Para rodar o projeto, é necessário ter instalado na sua máquina:
 Nodejs 18+
 banco postgresql
 
