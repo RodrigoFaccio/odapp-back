@@ -1,0 +1,22 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model patients {
+  id        Int       @id @default(autoincrement())
+  name      String
+  age       Int
+  city      String
+  state     String
+  created_at DateTime @default(now()) // Adicione created_at
+  updated_at DateTime @updatedAt      // Adicione updated_at
+}
