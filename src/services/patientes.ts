@@ -78,3 +78,20 @@ export async function listPatientsService() {
       message: 'Patient deleted successfully',
     };
   }
+
+  export async function populatePatients({age,city,name,state}:Omit<Patients, 'id'>) {
+    const patient = await prisma.patients.create({
+        data:{
+            age,
+            city,
+            name,
+            state,
+
+        }
+    });
+  
+    return {
+      code:200,
+      data:patient
+    };
+  }

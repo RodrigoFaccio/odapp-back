@@ -5,6 +5,7 @@ import {
   createPatient,
   deletePatient,
   listPatientsService,
+  populatePatients,
   updatePatient
 } from '../services/patientes';
 
@@ -70,3 +71,33 @@ export async function deletePatientsController(req: Request, res: Response) {
 }
 
 
+
+export async function populatePatientsController(req: Request, res: Response) {
+  const realPatients = [
+    { age: 32, city: 'São Paulo', name: 'João Silva', state: 'São Paulo' },
+    { age: 45, city: 'Rio de Janeiro', name: 'Maria Santos', state: 'Rio de Janeiro' },
+    { age: 28, city: 'Belo Horizonte', name: 'Pedro Oliveira', state: 'Minas Gerais' },
+    { age: 37, city: 'Salvador', name: 'Ana Ferreira', state: 'Bahia' },
+    { age: 50, city: 'Brasília', name: 'Carlos Souza', state: 'Distrito Federal' },
+    { age: 29, city: 'Fortaleza', name: 'Mariana Costa', state: 'Ceará' },
+    { age: 42, city: 'Recife', name: 'Fernando Santos', state: 'Pernambuco' },
+    { age: 35, city: 'Manaus', name: 'Carolina Lima', state: 'Amazonas' },
+    { age: 26, city: 'Porto Alegre', name: 'Rafaela Almeida', state: 'Rio Grande do Sul' },
+    { age: 31, city: 'Curitiba', name: 'Eduardo Castro', state: 'Paraná' },
+  ];
+
+  try {
+
+    realPatients.map(async item=>{
+      const patients = await populatePatients({name:item.name,age:item.age,city:item.city,state:item.state});
+     
+
+    })
+    res.status(200).json({
+      code:200,
+      message:'Pacientes cadastrados com sucesso'
+    });
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred' });
+  }
+}
