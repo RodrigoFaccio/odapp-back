@@ -101,4 +101,3 @@ yarn
 npx prisma migrate dev
 yarn dev
 
-Markdown 937 bytes 139 words 54 lines Ln 43, Col 1HTML 740 characters 128 words 36 paragraphs
